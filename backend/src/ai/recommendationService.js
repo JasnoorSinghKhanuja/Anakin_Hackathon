@@ -55,30 +55,30 @@ export async function getRecommendation({ mode, query, results }) {
     return deterministicRecommendation(compact);
   }
 
-  const response = await fetch(
-    `https://generativelanguage.googleapis.com/v1beta/models/${env.gemini.model}:generateContent?key=${env.gemini.apiKey}`,
-    {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        contents: [
-          {
-            role: 'user',
-            parts: [{ text: buildPrompt(compact) }]
-          }
-        ],
-        generationConfig: {
-          responseMimeType: 'application/json',
-          temperature: 0.2,
-          maxOutputTokens: 700
-        }
-      })
-    }
-  );
+  // const response = await fetch(
+  //   `https://generativelanguage.googleapis.com/v1beta/models/${env.gemini.model}:generateContent?key=${env.gemini.apiKey}`,
+  //   {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json'
+  //     },
+  //     body: JSON.stringify({
+  //       contents: [
+  //         {
+  //           role: 'user',
+  //           parts: [{ text: buildPrompt(compact) }]
+  //         }
+  //       ],
+  //       generationConfig: {
+  //         responseMimeType: 'application/json',
+  //         temperature: 0.2,
+  //         maxOutputTokens: 700
+  //       }
+  //     })
+  //   }
+  // );
 
-  const json = await response.json();
+  // const json = await response.json();
 
   if (!response.ok) {
     console.error('Gemini failed:', json);
