@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 165 32% 94%;
+  --foreground: 222 47% 11%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+  --primary: 222 47% 11%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 166 76% 92%;
+  --secondary-foreground: 222 47% 11%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215 16% 47%;
+  --accent: 174 84% 45%;
+  --accent-foreground: 222 47% 11%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
+  --ring: 174 84% 45%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.ambient-bg {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(115deg, rgba(45, 212, 191, 0.22), transparent 35%),
+    linear-gradient(245deg, rgba(14, 165, 233, 0.16), transparent 40%),
+    linear-gradient(135deg, #eef5f3 0%, #f8fafc 48%, #d8f3ee 100%);
+}
+
+.hero-visual {
+  position: relative;
+  min-height: 460px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 32px;
+  background:
+    linear-gradient(145deg, rgba(15, 23, 42, 0.96), rgba(17, 94, 89, 0.92)),
+    url('https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?auto=format&fit=crop&w=1400&q=80');
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 28px 100px rgba(15, 23, 42, 0.28);
+}
+
+.hero-visual::after {
+  content: '';
+  position: absolute;
+  inset: auto -20% -35% -20%;
+  height: 50%;
+  background: linear-gradient(180deg, transparent, rgba(45, 212, 191, 0.34));
+  filter: blur(34px);
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  z-index: 1;
+}
+
+.store-tile {
+  display: flex;
+  height: 92px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 14px;
+  font-weight: 800;
+  backdrop-filter: blur(18px);
+}
+
+.hero-orbit-card {
+  position: absolute;
+  left: 32px;
+  right: 32px;
+  bottom: 32px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 26px;
+  background: rgba(2, 6, 23, 0.72);
+  padding: 18px;
+  backdrop-filter: blur(18px);
+}
+
+@media (max-width: 640px) {
+  .hero-visual {
+    min-height: 360px;
+  }
+
+  .hero-grid {
+    inset: 18px;
+    grid-template-columns: 1fr;
+  }
+
+  .store-tile {
+    height: 58px;
+  }
+}

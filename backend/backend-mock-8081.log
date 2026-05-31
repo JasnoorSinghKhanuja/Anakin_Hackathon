@@ -1,0 +1,23 @@
+
+> buywise-ai-backend@1.0.0 dev
+> node --watch src/server.js
+
+BuyWise.AI backend listening on http://localhost:8081
+Restarting 'src/server.js'
+BuyWise.AI backend listening on http://localhost:8081
+Restarting 'src/server.js'
+BuyWise.AI backend listening on http://localhost:8081
+Restarting 'src/server.js'
+BuyWise.AI backend listening on http://localhost:8081
+Restarting 'src/server.js'
+BuyWise.AI backend listening on http://localhost:8081
+Restarting 'src/server.js'
+BuyWise.AI backend listening on http://localhost:8081
+Restarting 'src/server.js'
+BuyWise.AI backend listening on http://localhost:8081
+Restarting 'src/server.js'
+BuyWise.AI backend listening on http://localhost:8081
+Restarting 'src/server.js'
+BuyWise.AI backend listening on http://localhost:8081
+Restarting 'src/server.js'
+BuyWise.AI backend listening on http://localhost:8081
